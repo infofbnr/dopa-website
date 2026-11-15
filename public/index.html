@@ -1,0 +1,489 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#160d29">
+  <title>Dopa مين — Your Offline Era</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#" data-page="home">
+      <span class="brand-icon">d<span>·</span></span>
+      <span><b>Dopa <span class="arabic">مين</span></b><small>YOUR OFFLINE ERA</small></span>
+    </a>
+
+    <div class="profile">
+      <div class="avatar" id="avatar">D</div>
+      <div><b id="profileName">Explorer</b><small>Curious soul ✦</small></div>
+    </div>
+
+    <div class="nav-label">YOUR SPACE</div>
+    <nav>
+      <button class="nav active" data-page="home">⌂ <span>Overview</span></button>
+      <button class="nav" data-page="personality">◈ <span>My personality</span></button>
+      <button class="nav" data-page="quests">✳ <span>Offline quests</span><i id="questCount">6</i></button>
+      <button class="nav" data-page="challenges">♧ <span>Friend challenges</span></button>
+      <button class="nav" data-page="rewards">✧ <span>Rewards</span></button>
+      <button class="nav" data-page="journal">♡ <span>Mood journal</span></button>
+      <button class="nav" data-page="mabsouta">✦ <span>Mabsouta AI</span><i class="online"></i></button>
+      <button class="nav" data-page="community">◎ <span>Lebanon community</span></button>
+      <button class="nav" data-page="wearable">◷ <span>Wearables</span></button>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="sidebar-tip">
+        <span>✦ A LITTLE REMINDER</span>
+        <p>You don't have to be productive every second. Rest is part of life.</p>
+      </div>
+      <button class="nav" data-page="security">⬡ <span>Privacy & security</span></button>
+      <button class="nav" data-page="settings">⚙ <span>Settings</span></button>
+      <small class="sidebar-footer">MADE FOR REAL LIFE · 2026</small>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button class="mobile-menu" id="menuBtn">☰</button>
+      <div class="breadcrumb">DOPA <span>/</span> <b id="breadcrumb">OVERVIEW</b></div>
+      <div class="top-right">
+        <span id="today"></span>
+        <button class="icon-button" id="notifications">♧</button>
+        <div class="avatar small-avatar" id="topAvatar">D</div>
+      </div>
+    </header>
+
+    <!-- HOME / DASHBOARD -->
+    <section class="page active" id="page-home">
+      <div class="hero">
+        <div>
+          <div class="eyebrow"><span class="pulse"></span> YOUR DAILY CHECK-IN</div>
+          <h1>Hey <span id="welcomeName">Explorer</span>,<br>let's make today <em>count.</em></h1>
+          <p>Small moments offline. Big energy in real life.</p>
+          <button class="primary" data-page="quests">Explore today's quests ↗</button>
+        </div>
+        <div class="hero-art">
+          <div class="orb"></div>
+          <div class="hero-word">less scroll.<br><b>more soul.</b></div>
+          <span class="star one">✦</span><span class="star two">✧</span>
+        </div>
+      </div>
+
+      <div class="stats">
+        <article class="stat purple">
+          <span>QUEST POINTS</span>
+          <strong id="points">0</strong>
+          <small>✧ Earned through offline wins</small>
+        </article>
+        <article class="stat">
+          <span>SCREEN TIME TODAY</span>
+          <strong id="screenStat">0h 00m</strong>
+          <small id="screenGoal">Daily goal: 2 hours</small>
+        </article>
+        <article class="stat">
+          <span>OFFLINE STREAK</span>
+          <strong><span id="streak">0</span> days</strong>
+          <small>One day at a time ✦</small>
+        </article>
+      </div>
+
+      <div class="section-heading">
+        <div><span class="eyebrow">YOUR RHYTHM</span><h2>Today's balance</h2></div>
+        <button class="text-button" data-page="settings">Adjust goals ↗</button>
+      </div>
+
+      <div class="two-columns">
+        <article class="panel">
+          <div class="panel-heading">
+            <div><h3>Screen-time check</h3><p>A gentle nudge, never a judgement.</p></div>
+            <span class="tag">DAILY TRACKER</span>
+          </div>
+          <div class="screen-layout">
+            <div class="ring">
+              <svg viewBox="0 0 180 180">
+                <circle class="ring-bg" cx="90" cy="90" r="76"/>
+                <circle class="ring-progress" id="ring" cx="90" cy="90" r="76"/>
+              </svg>
+              <div class="ring-center"><b id="percentage">0%</b><small>of daily goal</small></div>
+            </div>
+            <div>
+              <span class="eyebrow">TODAY SO FAR</span>
+              <h2 id="screenLarge">0h 00m</h2>
+              <p id="screenMessage">Log your screen time to begin.</p>
+              <button class="primary" id="logScreen">＋ Log screen time</button>
+            </div>
+          </div>
+          <div class="notice">ⓘ Screen time is manually entered in this prototype.</div>
+        </article>
+
+        <article class="panel nudge">
+          <span class="eyebrow">✦ A NUDGE FROM DOPA</span>
+          <div class="nudge-time" id="nudgeTime">RIGHT NOW</div>
+          <h2 id="nudgeTitle">Your next break is a good idea.</h2>
+          <p id="nudgeText">Take ten minutes to stretch and change your scenery.</p>
+          <button class="dark-button" id="newNudge">Another nudge ↗</button>
+        </article>
+      </div>
+
+      <div class="section-heading">
+        <div><span class="eyebrow">MAKE IT HAPPEN</span><h2>Pick your next little win</h2></div>
+        <button class="text-button" data-page="quests">All quests ↗</button>
+      </div>
+      <div class="quest-grid" id="homeQuests"></div>
+
+      <div class="section-heading">
+        <div><span class="eyebrow">YOUR WELLNESS</span><h2>Quick check-in</h2></div>
+        <button class="text-button" data-page="journal">Open journal ↗</button>
+      </div>
+      <div class="quick-moods" id="quickMoods">
+        <button data-mood="Great">😄 Great</button>
+        <button data-mood="Good">🙂 Good</button>
+        <button data-mood="Okay">😐 Okay</button>
+        <button data-mood="Low">😕 Low</button>
+        <button data-mood="Stressed">😣 Stressed</button>
+      </div>
+    </section>
+
+    <!-- PERSONALITY -->
+    <section class="page" id="page-personality">
+      <div class="page-intro">
+        <span class="eyebrow">DISCOVER YOURSELF</span>
+        <h1>Your <em>personality.</em></h1>
+        <p>Ten questions to discover activities that suit your interests.</p>
+      </div>
+      <article class="panel quiz-panel" id="quizPanel">
+        <div class="quiz-progress">
+          <span id="quizStep">QUESTION 1 OF 10</span>
+          <span id="quizPercent">10%</span>
+        </div>
+        <div class="progress"><div id="quizBar"></div></div>
+        <h2 id="quizQuestion">How do you recharge best offline?</h2>
+        <div id="quizOptions" class="quiz-options"></div>
+        <div class="quiz-controls">
+          <button class="outline-button" id="quizBack" disabled>← Back</button>
+          <button class="primary" id="quizNext" disabled>Next question →</button>
+        </div>
+      </article>
+      <article class="panel result-panel hidden" id="quizResult">
+        <div class="result-icon">✦</div>
+        <span class="eyebrow">YOUR DOPA PROFILE</span>
+        <h2 id="profileType">The Creative Explorer</h2>
+        <p id="profileDescription"></p>
+        <h3>Your suggested quests</h3>
+        <div id="profileSuggestions"></div>
+        <button class="primary" id="retakeQuiz">Retake personality test</button>
+      </article>
+    </section>
+
+    <!-- QUESTS -->
+    <section class="page" id="page-quests">
+      <div class="page-intro">
+        <span class="eyebrow">OFFLINE, ON PURPOSE</span>
+        <h1>Your next <em>adventure.</em></h1>
+        <p>Little activities that help you reconnect with real life.</p>
+      </div>
+      <div class="filters" id="questFilters">        
+        <button class="filter active" data-filter="all">All quests</button>
+        <button class="filter" data-filter="creative">Creative</button>
+        <button class="filter" data-filter="movement">Movement</button>
+        <button class="filter" data-filter="calm">Calm & focus</button>
+      </div>
+      <div class="quest-grid large-grid" id="allQuests"></div>
+    </section>
+
+    <!-- SOCIAL CHALLENGES -->
+    <section class="page" id="page-challenges">
+      <div class="page-intro">
+        <span class="eyebrow">BETTER TOGETHER</span>
+        <h1>Challenge your <em>friends.</em></h1>
+        <p>Turn offline time into something you can enjoy together.</p>
+      </div>
+      <div class="challenge-hero">
+        <div class="versus"><div class="friend-avatar">YOU</div><b>VS</b><div class="friend-avatar">👤</div></div>
+        <span class="tag">ACTIVE CHALLENGE</span>
+        <h2>20-minute outdoor walk</h2>
+        <p>Complete your challenge today. Both participants get a cooperative bonus.</p>
+        <div class="challenge-bottom"><span>✧ +100 bonus points</span><button class="primary" id="completeChallenge">Complete my side ✓</button></div>
+      </div>
+      <div class="section-heading"><div><span class="eyebrow">YOUR CHALLENGES</span><h2>Community challenges</h2></div></div>
+      <div id="challengeList" class="challenge-list"></div>
+      <article class="panel invite-panel">
+        <h3>Invite a friend</h3>
+        <p>Share an offline challenge with someone you know.</p>
+        <input id="friendName" placeholder="Friend's nickname">
+        <button class="primary" id="inviteFriend">Create challenge ↗</button>
+      </article>
+    </section>
+
+    <!-- REWARDS -->
+    <section class="page" id="page-rewards">
+      <div class="page-intro">
+        <span class="eyebrow">LITTLE WINS, REAL REWARDS</span>
+        <h1>You've earned <em>this.</em></h1>
+        <p>Turn offline moments into points and rewards.</p>
+      </div>
+      <div class="reward-banner">
+        <span>AVAILABLE BALANCE</span>
+        <h2 id="rewardPoints">0 <small>POINTS</small></h2>
+        <p>Keep showing up for your offline life.</p>
+      </div>
+      <div class="section-heading"><div><span class="eyebrow">THE GOOD STUFF</span><h2>Reward shelf</h2></div></div>
+      <div class="reward-grid" id="rewardGrid"></div>
+      <article class="panel">
+        <h3>Ways to earn</h3>
+        <div class="earn-row">Complete an offline quest <b>+50–100 pts</b></div>
+        <div class="earn-row">Daily mood check-in <b>+10 pts</b></div>
+        <div class="earn-row">Voluntary screen break <b>+25 pts</b></div>
+      </article>
+      <p class="disclaimer">Rewards are demonstration vouchers, not real coupons.</p>
+    </section>
+
+    <!-- JOURNAL -->
+    <section class="page" id="page-journal">
+      <div class="page-intro">
+        <span class="eyebrow">CHECK IN WITH YOURSELF</span>
+        <h1>How are you <em>feeling?</em></h1>
+        <p>No pressure. This space is yours.</p>
+      </div>
+      <article class="panel">
+        <h3>Daily mood check-in</h3>
+        <p>Choose the mood that best describes how you feel.</p>
+        <div class="mood-options" id="moodOptions">
+          <button data-mood="Great">😄<span>Great</span></button>
+          <button data-mood="Good">🙂<span>Good</span></button>
+          <button data-mood="Okay">😐<span>Okay</span></button>
+          <button data-mood="Low">😕<span>Low</span></button>
+          <button data-mood="Stressed">😣<span>Stressed</span></button>
+        </div>
+        <label for="journalText">What's on your mind? (Optional)</label>
+        <textarea id="journalText" rows="5" placeholder="Today I'm thinking about..."></textarea>
+        <button class="primary" id="saveMood">Save check-in +10 pts</button>
+      </article>
+      <article class="panel">
+        <div class="panel-heading"><h3>Reflection prompt</h3><button class="text-button" id="newPrompt">Another prompt ↗</button></div>
+        <p class="prompt" id="journalPrompt">What's one small thing that made you smile today?</p>
+      </article>
+      <article class="panel">
+        <h3>Your recent check-ins</h3>
+        <div id="moodHistory"></div>
+      </article>
+    </section>
+
+    <!-- MABSOUTA AI -->
+    <section class="page" id="page-mabsouta">
+      <div class="page-intro">
+        <span class="eyebrow">YOUR REFLECTIVE COMPANION</span>
+        <h1>Meet <em>Mabsouta.</em></h1>
+        <p>A friendly AI companion to help you reflect, journal, and discover healthier habits.</p>
+      </div>
+      <div class="chat-layout">
+        <article class="chat-panel">
+          <div class="chat-header">
+            <div class="mabs-avatar">م</div>
+            <div><b>Mabsouta AI</b><small><span class="online"></span> Wellness companion</small></div>
+            <button class="text-button" id="clearChat">Clear chat</button>
+          </div>
+          <div class="chat-messages" id="chatMessages">
+            <div class="message bot">
+              Marhaba! I'm Mabsouta. ♡<br><br>
+              How are you feeling today? We can talk about your mood, your habits, or anything on your mind.
+            </div>
+          </div>
+          <div class="chat-suggestions">
+            <button data-prompt="Help me reflect on my day.">Reflect on my day</button>
+            <button data-prompt="Suggest an offline activity for me.">Suggest a quest</button>
+            <button data-prompt="I feel stressed. Can you help me slow down?">I'm stressed</button>
+          </div>
+          <form id="chatForm" class="chat-input">
+            <input id="chatInput" maxlength="2000" placeholder="Talk to Mabsouta..." autocomplete="off">
+            <button class="primary" id="sendChat">↑</button>
+          </form>
+          <div class="chat-privacy">AI conversations are sent to the configured AI provider. Don't share passwords or highly sensitive personal information.</div>
+        </article>
+        <aside class="panel ai-side">
+          <div class="mabs-avatar large">م</div>
+          <h3>A safe space to reflect.</h3>
+          <p>Mabsouta can offer general wellness suggestions and journaling prompts. She isn't a doctor or therapist and cannot diagnose or treat conditions.</p>
+          <div class="ai-feature">♡ Mood reflection</div>
+          <div class="ai-feature">✦ Personalized activities</div>
+          <div class="ai-feature">◷ Healthy habit ideas</div>
+          <div class="ai-feature">✎ Journal inspiration</div>
+        </aside>
+      </div>
+      <article class="panel">
+        <div class="panel-heading"><h3>Monthly wellness report</h3><button class="primary" id="generateReport">Generate report ↗</button></div>
+        <p>Creates a summary of your local mood check-ins and habits. This is a personal reflection, not a clinical assessment.</p>
+        <div id="reportOutput"></div>
+      </article>
+    </section>
+
+    <!-- COMMUNITY -->
+    <section class="page" id="page-community">
+      <div class="page-intro">
+        <span class="eyebrow">GOOD PEOPLE, REAL PLACES</span>
+        <h1>Find your <em>people.</em></h1>
+        <p>Discover phone-free activities and local meetups.</p>
+      </div>
+      <div class="community-banner">
+        <span class="tag">LEBANON TEEN HUB</span>
+        <h2>More life. Less feed.</h2>
+        <p>Explore shared interests and make memories outside your screen.</p>
+      </div>
+      <div class="section-heading"><div><span class="eyebrow">AROUND LEBANON</span><h2>Upcoming meetups</h2></div></div>
+      <div class="meetup-grid" id="meetupGrid"></div>
+      <article class="panel safety">
+        <h3>🛡 Safety comes first</h3>
+        <p>Meetups should be organized by trusted adults or established groups, take place in public spaces, and be attended with guardian awareness. These demo events are fictional and not verified.</p>
+      </article>
+    </section>
+
+    <!-- WEARABLES -->
+    <section class="page" id="page-wearable">
+      <div class="page-intro">
+        <span class="eyebrow">CONNECTED WELLNESS</span>
+        <h1>Your wrist, your <em>rhythm.</em></h1>
+        <p>A preview of how Dopa could connect to a wearable device.</p>
+      </div>
+      <div class="wearable-grid">
+        <article class="panel watch-card">
+          <div class="watch-face">
+            <span>DOPA</span>
+            <strong id="watchTime">--:--</strong>
+            <span>YOUR DAILY BALANCE</span>
+            <div id="watchPercent">0%</div>
+          </div>
+          <h3>Dopa Smartwatch</h3>
+          <p>Quest alerts, reminders and screen-time summaries on your wrist.</p>
+          <span class="tag">SIMULATED PREVIEW</span>
+        </article>
+        <article class="panel">
+          <h3>Biometric overview</h3>
+          <p>Example wearable readings. These are simulated, not actual measurements.</p>
+          <div class="bio-metric"><span>♥ Heart rate</span><b id="heartRate">72 BPM</b></div>
+          <div class="bio-metric"><span>↗ HRV</span><b id="hrv">48 ms</b></div>
+          <div class="bio-metric"><span>◉ Stress indicator</span><b id="stress">Low</b></div>
+          <button class="primary" id="simulateWearable">Simulate new reading</button>
+        </article>
+      </div>
+      <article class="panel">
+        <h3>Device integration</h3>
+        <p>Real wearable data requires a supported device, permission, and a compatible health-data integration. This prototype does not connect to your watch.</p>
+        <button class="outline-button" id="wearableInfo">Learn about integrations</button>
+      </article>
+    </section>
+
+    <!-- SECURITY -->
+    <section class="page" id="page-security">
+      <div class="page-intro">
+        <span class="eyebrow">YOUR DATA MATTERS</span>
+        <h1>Privacy & <em>security.</em></h1>
+        <p>Understand what this prototype stores and what it doesn't.</p>
+      </div>
+      <div class="security-grid">
+        <article class="panel"><span class="security-icon">⬡</span><h3>Local browser storage</h3><p>Profile, quests, and journal entries are stored locally in this browser.</p><span class="tag">LOCAL DEMO</span></article>
+        <article class="panel"><span class="security-icon">♧</span><h3>AI privacy</h3><p>Chat messages are sent to the server and AI provider when you use Mabsouta.</p><span class="tag">AI CONNECTION</span></article>
+        <article class="panel"><span class="security-icon">⌑</span><h3>Authentication</h3><p>No real account, login, or multi-factor authentication is implemented.</p><span class="tag">NOT CONNECTED</span></article>
+        <article class="panel"><span class="security-icon">♧</span><h3>Encryption</h3><p>Browser storage is not end-to-end encrypted. Production requires proper encrypted storage and access controls.</p><span class="tag">PRODUCTION REQUIRED</span></article>
+      </div>
+      <article class="panel">
+        <h3>Privacy policy summary</h3>
+        <p>Dopa's concept collects mood, sleep, screen-time and habit information to provide personalized wellness experiences. Users should be able to review and delete their information and withdraw consent. No advertising or sale of personal information is intended.</p>
+        <label class="check-row"><input type="checkbox" id="guardianConsent"> I have discussed this demo with my parent or guardian.</label>
+        <button class="primary" id="saveConsent">Save acknowledgement</button>
+        <button class="outline-button danger" id="deleteData">Delete all local data</button>
+      </article>
+    </section>
+
+    <!-- SETTINGS -->
+    <section class="page" id="page-settings">
+      <div class="page-intro">
+        <span class="eyebrow">YOUR SPACE, YOUR RULES</span>
+        <h1>Personal <em>settings.</em></h1>
+      </div>
+      <article class="panel settings-panel">
+        <h3>Your profile</h3>
+        <label>Display name</label>
+        <input id="settingName" maxlength="24" placeholder="Your name">
+        <label>Daily screen-time goal (minutes)</label>
+        <input id="settingGoal" type="number" min="30" max="600" value="120">
+        <button class="primary" id="saveSettings">Save changes</button>
+      </article>
+      <article class="panel">
+        <h3>Screen-time reminders</h3>
+        <label class="check-row"><input type="checkbox" id="nudgesEnabled" checked> Enable in-app motivational nudges</label>
+        <label class="check-row"><input type="checkbox" id="lockEnabled"> Enable demo break reminder at daily goal</label>
+        <p class="disclaimer">These are in-app reminders, not operating-system app locks or push notifications.</p>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <span>© 2026 DOPA مين</span>
+      <span>Made for the moments that matter ✦</span>
+      <button data-page="security">Privacy & security</button>
+    </footer>
+  </main>
+</div>
+
+<!-- ONBOARDING -->
+<dialog id="onboarding">
+  <form id="onboardingForm" class="dialog-card">
+    <div class="brand-icon">d<span>·</span></div>
+    <span class="eyebrow">WELCOME TO YOUR OFFLINE ERA</span>
+    <h2>Who are <em>you?</em></h2>
+    <p>Let's make room for real life.</p>
+    <label>Your display name</label>
+    <input id="onboardName" maxlength="24" placeholder="Your first name" required>
+    <div class="policy-scroll">
+      <b>Privacy summary</b>
+      <p>This prototype stores demo information in your browser. AI chat messages are sent to the configured AI provider. No real account, identity verification, encryption service, or parental approval service is connected.</p>
+      <p>Mabsouta provides general wellness suggestions and is not a medical professional.</p>
+    </div>
+    <label class="check-row"><input type="checkbox" id="privacyAccept" required> I understand and accept the demo privacy summary.</label>
+    <button class="primary full" type="submit">Let's begin ↗</button>
+  </form>
+</dialog>
+
+<!-- SCREEN TIME MODAL -->
+<dialog id="screenModal">
+  <form id="screenForm" class="dialog-card">
+    <button type="button" class="close" data-close="screenModal">×</button>
+    <span class="eyebrow">SCREEN-TIME LOG</span>
+    <h2>Let's check in.</h2>
+    <label>Minutes to add</label>
+    <input id="minutesInput" type="number" min="1" max="720" value="30" required>
+    <button class="primary full">Add screen time</button>
+  </form>
+</dialog>
+
+<!-- QUEST MODAL -->
+<dialog id="questModal">
+  <div class="dialog-card">
+    <button class="close" data-close="questModal">×</button>
+    <span class="eyebrow" id="modalCategory">OFFLINE QUEST</span>
+    <h2 id="modalTitle">Quest</h2>
+    <p id="modalDescription"></p>
+    <div class="modal-meta"><span id="modalDuration"></span><span id="modalPoints"></span></div>
+    <button class="primary full" id="completeQuest">Mark quest complete ✓</button>
+  </div>
+</dialog>
+
+<!-- REWARD MODAL -->
+<dialog id="rewardModal">
+  <div class="dialog-card">
+    <button class="close" data-close="rewardModal">×</button>
+    <span class="eyebrow">REWARD REDEMPTION</span>
+    <h2 id="rewardModalTitle"></h2>
+    <p id="rewardModalDescription"></p>
+    <button class="primary full" id="confirmReward">Redeem points</button>
+  </div>
+</dialog>
+
+<script src="app.js"></script>
+</body>
+</html>
