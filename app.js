@@ -682,7 +682,7 @@ async function askMabsouta(text) {
   const typing = addMessage("Mabsouta is thinking...","bot typing");
 
   try {
-    const response = await fetch("/api/mabsouta",{
+    const response = await fetch("https://dopa-min.duckdns.org/api/mabsouta",{
       method:"POST",
       headers:{"Content-Type":"application/json"},
       body:JSON.stringify({
@@ -768,7 +768,7 @@ async function generateReport() {
   }));
 
   try {
-    const response = await fetch("/api/mabsouta",{
+    const response = await fetch("https://dopa-min.duckdns.org/api/mabsouta",{
       method:"POST",
       headers:{"Content-Type":"application/json"},
       body:JSON.stringify({
