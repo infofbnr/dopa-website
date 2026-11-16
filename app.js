@@ -901,6 +901,24 @@ function bindEvents() {
       quizAnswers[quizIndex] = Number(answer.dataset.answer);
       renderQuiz();
     }
+
+    // Guardian acknowledgement popup
+    $("#guardianPopupConsent").addEventListener("change", (e) => {
+      $("#guardianContinue").disabled = !e.target.checked;
+    });
+
+    $("#guardianContinue").addEventListener("click", () => {
+      if (!$("#guardianPopupConsent").checked) return;
+
+      state.guardian = true;
+      save();
+
+      $("#guardianConsent").checked = true;
+
+      closeDialog("guardianDialog");
+      toast("Welcome to Dopa مين!");
+    });
+
   });
 
   $("#logScreen").addEventListener("click",() => {
@@ -1011,6 +1029,12 @@ function bindEvents() {
     closeDialog("onboarding");
     updateUI();
 
+    if (!state.guardian) {
+      $("#guardianPopupConsent").checked = false;
+      $("#guardianContinue").disabled = true;
+      $("#guardianDialog").showModal();
+    }
+
     toast(`Welcome to Dopa, ${name}!`);
   });
 }
@@ -1039,6 +1063,10 @@ function init() {
 
   if (!state.name) {
     $("#onboarding").showModal();
+  } else if (!state.guardian) {
+    $("#guardianPopupConsent").checked = false;
+    $("#guardianContinue").disabled = true;
+    $("#guardianDialog").showModal();
   }
 
   setInterval(updateWatch,30000);

@@ -15,7 +15,7 @@
 <div class="app">
   <aside class="sidebar" id="sidebar">
     <a class="brand" href="#" data-page="home">
-      <span class="brand-icon">d<span>·</span></span>
+      <span class="brand-icon"><img src="dopameen.jpeg" alt="Dopa مين"></span>
       <span><b>Dopa <span class="arabic">مين</span></b><small>YOUR OFFLINE ERA</small></span>
     </a>
 
@@ -285,7 +285,9 @@
       <div class="chat-layout">
         <article class="chat-panel">
           <div class="chat-header">
-            <div class="mabs-avatar">م</div>
+            <div class="mabs-avatar">
+              <img src="mabsouta.jpeg" alt="Mabsouta">
+            </div>
             <div><b>Mabsouta AI</b><small><span class="online"></span> Wellness companion</small></div>
             <button class="text-button" id="clearChat">Clear chat</button>
           </div>
@@ -307,7 +309,7 @@
           <div class="chat-privacy">AI conversations are sent to the configured AI provider. Don't share passwords or highly sensitive personal information.</div>
         </article>
         <aside class="panel ai-side">
-          <div class="mabs-avatar large">م</div>
+          <div class="mabs-avatar large"> </div>
           <h3>A safe space to reflect.</h3>
           <p>Mabsouta can offer general wellness suggestions and journaling prompts. She isn't a doctor or therapist and cannot diagnose or treat conditions.</p>
           <div class="ai-feature">♡ Mood reflection</div>
@@ -433,7 +435,7 @@
 <!-- ONBOARDING -->
 <dialog id="onboarding">
   <form id="onboardingForm" class="dialog-card">
-    <div class="brand-icon">d<span>·</span></div>
+    <div class="brand-icon"><img src="dopameen.jpeg" alt="Dopa مين"></div>
     <span class="eyebrow">WELCOME TO YOUR OFFLINE ERA</span>
     <h2>Who are <em>you?</em></h2>
     <p>Let's make room for real life.</p>
@@ -447,6 +449,60 @@
     <label class="check-row"><input type="checkbox" id="privacyAccept" required> I understand and accept the demo privacy summary.</label>
     <button class="primary full" type="submit">Let's begin ↗</button>
   </form>
+</dialog>
+
+<!-- GUARDIAN ACKNOWLEDGEMENT -->
+<dialog id="guardianDialog">
+  <div class="dialog-card guardian-card">
+    <div class="brand-icon">
+      <img src="dopameen.jpeg" alt="Dopa مين">
+    </div>
+
+    <span class="eyebrow">A QUICK NOTE FOR FAMILIES</span>
+    <h2>Let's make this a <em>safe space.</em></h2>
+
+    <p>
+      Before getting started, please review Dopa مين with your
+      parent or guardian.
+    </p>
+
+    <div class="policy-scroll">
+      <b>What families should know</b>
+
+      <p>
+        • Dopa stores profile details, mood check-ins, quests
+        and other demo information in this browser.
+      </p>
+
+      <p>
+        • Mabsouta AI sends chat messages to our backend
+        and configured AI provider to generate responses.
+      </p>
+
+      <p>
+        • Mabsouta provides general wellness suggestions.
+        She is not a doctor or therapist.
+      </p>
+
+      <p>
+        • This is a prototype. It does not have real accounts,
+        identity verification or verified parental consent.
+      </p>
+    </div>
+
+    <label class="check-row">
+      <input type="checkbox" id="guardianPopupConsent">
+      My parent or guardian has reviewed this information with me.
+    </label>
+
+    <button class="primary full" id="guardianContinue" disabled>
+      Continue to Dopa ↗
+    </button>
+
+    <small class="disclaimer">
+      Please ask your parent or guardian if you have any questions.
+    </small>
+  </div>
 </dialog>
 
 <!-- SCREEN TIME MODAL -->
